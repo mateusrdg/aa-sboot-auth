@@ -1,0 +1,28 @@
+cloud:
+  aws:
+    region:
+      static: us-east-2
+      auto: false
+    credentials:
+      access-key: ${AWS_ACCESS_KEY}
+      secret-key: ${AWS_SECRET_ACCESS_KEY}
+
+    cognito:
+      client-id: ${COGNITO_CLIENT_ID}
+      userpool: ${COGNITO_USERPOOL}
+      client-secret: ${COGNITO_CLIENT_SECRET}
+      jwk-set-uri: ${JWK_SET_URI}
+
+spring:
+  datasource:
+    url: jdbc:postgresql://base.c5iicuok4ddw.us-east-2.rds.amazonaws.com:5432/auth
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
