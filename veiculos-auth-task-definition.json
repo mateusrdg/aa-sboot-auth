@@ -1,12 +1,12 @@
 {
     "containerDefinitions": [
         {
-            "name": "healthmed-management",
-            "image": "211125787133.dkr.ecr.us-east-2.amazonaws.com/healthmed/management",
+            "name": "veiculos-auth",
+            "image": "211125787133.dkr.ecr.us-east-2.amazonaws.com/veiculos/auth",
             "cpu": 0,
             "portMappings": [
                 {
-                    "name": "healthmed-management-80-tcp",
+                    "name": "veiculos-auth-80-tcp",
                     "containerPort": 80,
                     "hostPort": 80,
                     "protocol": "tcp",
@@ -52,7 +52,7 @@
             "logConfiguration": {
                 "logDriver": "awslogs",
                 "options": {
-                    "awslogs-group": "/ecs/health-med-management-task-definition",
+                    "awslogs-group": "/ecs/veiculos-auth-task-definition",
                     "mode": "non-blocking",
                     "awslogs-create-group": "true",
                     "max-buffer-size": "25m",
@@ -64,7 +64,7 @@
             "systemControls": []
         }
     ],
-    "family": "health-med-management-task-definition",
+    "family": "veiculos-auth-task-definition",
     "taskRoleArn": "arn:aws:iam::211125787133:role/ecsTaskExecutionRole",
     "executionRoleArn": "arn:aws:iam::211125787133:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
